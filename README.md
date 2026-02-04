@@ -18,3 +18,7 @@ Documentation and configuration of my personal homelab used for hands-on learnin
 - Practice real-world troubleshooting
 - Document configurations for learning and portfolio purposes
 
+### Planned / In Progress
+- Docker & Docker Compose
+- LDAP Authentication
+- Zimbra Mail Server
