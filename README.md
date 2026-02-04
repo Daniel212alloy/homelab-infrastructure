@@ -5,7 +5,7 @@ Documentation and configuration of my personal homelab used for hands-on learnin
 ## 🔧 Tech Stack
 - Linux Server (Debian, Ubuntu, CentOS)
 - Virtualization (VirtualBox, virt-manager)
-- Docker Compose
+- Docker & Docker Compose (planned)
 - Nginx Reverse Proxy
 - Networking (Mikrotik, Port Forwarding, Firewall)
 - LDAP Authentication
