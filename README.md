@@ -18,7 +18,9 @@ Documentation and configuration of my personal homelab used for hands-on learnin
 - Perform system troubleshooting and issue resolution
 - Install and maintain Linux on laptops and workstations
 - Document configurations and problem-solving steps for portfolio purposes
-
+- Managed Linux servers with centralized authentication (LDAP)
+- Troubleshot SSH, permission, and user login issues
+- Managed sudo access and user permissions
 ---
 
 ## 🌐 Networking Setup
