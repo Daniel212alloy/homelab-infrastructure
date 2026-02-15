@@ -5,7 +5,7 @@ This document describes my LDAP setup used for centralized authentication
 in my homelab environment.
 
 ## Environment
-- OS: Debian / Ubuntu
+- OS: CentoS / Debian / Ubuntu
 - LDAP Server: OpenLDAP
 - Usage: SSH authentication, centralized users
 
