@@ -3,12 +3,13 @@
 Documentation and configuration of my personal homelab used for hands-on learning in SysAdmin and DevOps.
 
 ## 🔧 Tech Stack
-- Linux Server (Debian, Ubuntu, CentOS)
-- Virtualization (VirtualBox, virt-manager)
+- Linux Server (Debian, Ubuntu, CentOS, Rocky Linux)
+- Virtualization (Virt-manager(KVM), VirtualBox)
 - LAMP Stack (Apache, MariaDB, PHP)
 - Networking (Mikrotik, Port Forwarding, Firewall)
 - Mail Server (Zimbra Collaboration Suite)
 - Self-hosted Services (Nextcloud, Zimbra, Samba, FTP)
+- Install And Setup LDAP dan Multi OS LDAP Client
 
 
 ## 🏗️ What I Do Here
@@ -18,6 +19,7 @@ Documentation and configuration of my personal homelab used for hands-on learnin
 - Perform system troubleshooting and issue resolution
 - Install and maintain Linux on laptops and workstations
 - Document configurations and problem-solving steps for portfolio purposes
+- Setup OS with separate storage disk
 
 ---
 
@@ -32,13 +34,13 @@ Documentation and configuration of my personal homelab used for hands-on learnin
 ## 📧 Mail Server Setup (Zimbra)
 
 ### Environment
-- OS: CentOS 7
+- OS: CentOS 7 ,Rocky Linux 
 - Mail Server: Zimbra Collaboration Suite
 - Installation Type: Standalone
 - Network: Internal homelab
 
 ### Summary
-- Installed Zimbra on CentOS 7 virtual machine
+- Installed Zimbra on CentOS 7 , Rocky Linux virtual machine
 - Configured basic mail services and hostname
 - Created and managed local mail users
 - Accessed and tested webmail via browser
