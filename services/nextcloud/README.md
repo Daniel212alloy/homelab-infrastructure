@@ -5,7 +5,7 @@
 - Web Server: Apache
 - Database: MariaDB / MySQL
 - PHP 8.x
-- Network: Local VM with Ip Private And Domain with cloudflare tunel
+- Network: Local VM ,Ip Private And Domain with cloudflare tunel
 
 ## Installation Summary
 1. Install Apache,PHP In Debian
