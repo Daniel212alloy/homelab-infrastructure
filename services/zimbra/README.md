@@ -1,67 +1,35 @@
-1.nano /etc/named.conf
+Technical Stack
+
+    OS: Rocky Linux 8 (Virtual Machine via Virt-Manager)
+
+    Mail Server: Zimbra ZCS 8.8.15 GA
+
+    SMTP Relay: Brevo (Sendinblue)
+
+    DNS Management: Cloudflare
+
+    Networking: Cloudflare Tunnels (for webmail access)
+
+Key Implementation
+
+    Bypassing ISP Restrictions: Mengatasi pemblokiran port 25 & 587 oleh ISP dengan mengalihkan traffic ke port 2525.
+
+    SMTP Authentication: Konfigurasi SASL authentication pada Postfix Zimbra menggunakan kredensial Brevo.
+
+    DNS Security (SPF, DKIM, DMARC): Implementasi standar keamanan email via Cloudflare untuk memastikan email tidak masuk folder Spam.
+
+    Relay Configuration:
 
 
-options {
-        listen-on port 53 { 127.0.0.1; };
-        listen-on-v6 port 53 { ::1; };
-        directory       "/var/named";
-        dump-file       "/var/named/data/cache_dump.db";
-        statistics-file "/var/named/data/named_stats.txt";
-        memstatistics-file "/var/named/data/named_mem_stats.txt";
-        allow-query     { localhost; };
-
-Menjadi
-
-options {
-        listen-on port 53 { any; };
-        listen-on-v6 port 53 { ::1; };
-        directory       "/var/named";
-        dump-file       "/var/named/data/cache_dump.db";
-        statistics-file "/var/named/data/named_stats.txt";
-        memstatistics-file "/var/named/data/named_mem_stats.txt";
-        allow-query     { any; };
-
-
-
-
-
-
-forwarders {
-                8.8.8.8;
-                8.8.4.4;
-        };
-
-
-2
-3
-4
-        
-zone "adminjalanan.local" {
-    type master;
-    file "/var/named/adminjalanan.local.hosts";
-};
-
-
-nano /var/named/adminjalanan.local.hosts
-
-
-$TTL 38400
-adminjalanan.local.   IN  SOA  mail.adminjalanan.local. admin.adminjalanan.local. (
-                        1520401033 ;
-                        10800
-                        3600
-                        604800
-                        38400 )
-adminjalanan.local.   IN  NS   mail.adminjalanan.local.
-mail.adminjalanan.local. IN  A IP VM ZIMBRANYA
-adminjalanan.local.   IN  A  IP VM ZIMBRANYA     
-adminjalanan.local.   IN  MX 10 mail.adminjalanan.local.
-
-systemctl restart named
-rndc reload adminjalanan.local
-
-dig aloy.adminkopi.local
-nslookup adminjalanan.local 10.101.175.50
-
-wget https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_3869.RHEL7_64.20190918004220.tgz
-sudo  ./install.sh
+[root@mail ~]# tail -f /var/log/zimbra.log | grep "smtp-relay.brevo.com"
+Apr 15 13:03:29 mail postfix/smtp[105148]: C1583451154F: to=<danielsaragih212@gmail.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=2737, delays=2734/1.7/1.3/0.25, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <27687904.11.1776230268133.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:04:13 mail postfix/smtp[105149]: 3CC8945114BA: to=<danielsaragih212@gmail.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.5, delays=0.01/0/1.3/0.21, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <2137116700.64.1776233047367.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:08:07 mail postfix/smtp[108635]: BBE874511453: to=<danielsaragih212@gmail.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.7, delays=0.02/0.09/1.4/0.24, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <400483586.66.1776233280978.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:26:18 mail postfix/smtp[123539]: 9D03545113DF: to=<danielsaragih212@gmail.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.6, delays=0.01/0.03/1.3/0.28, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <1891224832.67.1776234371866.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:28:30 mail postfix/smtp[125339]: 943A34511187: to=<danielsaragih212@gmail.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.6, delays=0.01/0.03/1.3/0.28, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <243651722.75.1776234503921.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:30:34 mail postfix/smtp[126798]: CEDC14511187: to=<saragih.wiono@gamil.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.8, delays=0.02/0.05/1.4/0.28, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <1920019729.81.1776234628136.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:30:34 mail postfix/smtp[126798]: CEDC14511187: to=<danielsaragih212@gmail.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.8, delays=0.02/0.05/1.4/0.28, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <1920019729.81.1776234628136.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:33:31 mail postfix/smtp[128722]: BC87A45114B8: to=<danielsaragih212@gmail.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.6, delays=0.01/0.03/1.3/0.27, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <229680980.83.1776234805052.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:33:31 mail postfix/smtp[128722]: BC87A45114B8: to=<saragih.wiono@gmail.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.6, delays=0.01/0.03/1.3/0.27, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <229680980.83.1776234805052.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:35:58 mail postfix/smtp[130332]: 4844E45114B8: to=<danielsaragih212@gmail.com>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.6, delays=0.01/0.03/1.3/0.24, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <81952014.85.1776234952395.JavaMail.zimbra@aloy-tech.my.id>)
+Apr 15 13:35:58 mail postfix/smtp[130332]: 4844E45114B8: to=<melda_alin@yahoo.co.id>, relay=smtp-relay.brevo.com[1.179.116.1]:2525, delay=1.6, delays=0.01/0.03/1.3/0.24, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as <81952014.85.1776234952395.JavaMail.zimbra@aloy-tech.my.id>)
