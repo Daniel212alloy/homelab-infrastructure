@@ -1,6 +1,7 @@
-# 🧪 Homelab Infrastructure
+# 🚀 Homelab Infrastructure
 
-Documentation and configuration of my personal homelab used for hands-on learning in SysAdmin and DevOps.
+A comprehensive documentation of my personal IT infrastructure, focusing on server administration, networking, and self-hosted services. This repository serves as a technical log for configurations and real-world problem-solving.
+
 
 ## 🔧 Tech Stack
 - Linux Server (Debian, Ubuntu, CentOS, Rocky Linux)
@@ -29,21 +30,41 @@ Documentation and configuration of my personal homelab used for hands-on learnin
 - Configured NAT and port forwarding for self-hosted services
 - Applied basic firewall rules for access control
 
+
+## 📧 Mail Server Stack (Zimbra Collaboration)
+
+Successfully deployed **Zimbra Collaboration Suite (ZCS 8.8.15)** on **Rocky Linux 8**. The primary focus of this lab was to establish a reliable email delivery system despite ISP port restrictions.
+
+### **Technical Specifications**
+- **Operating System:** Rocky Linux 8 (VM environment)
+- **Mail Suite:** Zimbra ZCS 8.8.15 GA
+- **SMTP Relay:** Brevo (formerly Sendinblue)
+- **Relay Port:** 2525 (Bypassing ISP port 25/587 blocking)
+- **DNS Provider:** Cloudflare
+
+### **Core Implementations**
+1. **SMTP Relay Integration:** Configured Zimbra to relay outbound mail through Brevo to ensure high deliverability to providers like Gmail and Yahoo.
+2. **Email Security Standard:**
+   - Implemented **SPF, DKIM, and DMARC** records via Cloudflare.
+   - Configured **SASL Authentication** for secure SMTP communication.
+3. **Domain Authentication:** Fully authenticated `aloy-tech.my.id` using Cloudflare’s Domain Connect to improve sender reputation and prevent spam flagging.
+
+### **Troubleshooting & Key Takeaways**
+- **Authentication:** Resolved `535 5.7.8 Authentication failed` errors by validating SMTP API keys and mapping credentials correctly in Postfix.
+- **Port Management:** Diagnosed connection timeouts on standard ports and successfully pivoted to port **2525** for stable relaying.
+- **Deliverability:** Verified that proper DKIM TXT records are essential for passing Google's strict security filters.
+
 ---
 
-## 📧 Mail Server Setup (Zimbra)
+## 🛠️ Other Services & Expertise
+- **Operating Systems:** Advanced administration of Ubuntu, Debian, CentOS, and Rocky Linux.
+- **Identity Management:** Centralized authentication using OpenLDAP.
+- **Cloud Storage:** Self-hosted Nextcloud instance for private data management.
+- **Secure Access:** Implementing Cloudflare Tunnels and Tailscale for encrypted remote access.
 
-### Environment
-- OS: CentOS 7 ,Rocky Linux 
-- Mail Server: Zimbra Collaboration Suite
-- Installation Type: Standalone
-- Network: Internal homelab
+---
+*Maintained by Daniel (aloy) — Passionate about Linux Systems and Network Engineering.*
 
-### Summary
-- Installed Zimbra on CentOS 7 , Rocky Linux virtual machine
-- Configured basic mail services and hostname
-- Created and managed local mail users
-- Accessed and tested webmail via browser
 
 ### Notes
 This setup is used for learning and homelab purposes only.
