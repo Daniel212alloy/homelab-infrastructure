@@ -2,8 +2,8 @@
 
 A comprehensive documentation of my personal IT infrastructure, focusing on server administration, networking, and self-hosted services. This repository serves as a technical log for configurations and real-world problem-solving.
 
-
 ## 🔧 Tech Stack
+
 🐧 Operating Systems
   * Debian * Ubuntu * CentOS * Rocky Linux
 💻 Virtualization 
