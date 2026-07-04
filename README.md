@@ -4,13 +4,24 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 
 
 ## 🔧 Tech Stack
-- Linux Server (Debian, Ubuntu, CentOS, Rocky Linux)
-- Virtualization (Virt-manager(KVM), VirtualBox)
-- LAMP Stack (Apache, MariaDB, PHP)
-- Networking (Mikrotik, Port Forwarding, Firewall)
-- Mail Server (Zimbra Collaboration Suite)
-- Self-hosted Services (Nextcloud, Zimbra, Samba, FTP)
-- Install And Setup LDAP dan Multi OS LDAP Client
+🐧 Operating Systems
+  * Debian * Ubuntu * CentOS * Rocky Linux
+💻 Virtualization 
+  * KVM (Virt-Manager) * VirtualBox
+🌐 Web Server & Development
+  * Apache HTTP Server * MariaDB * PHP (LAMP Stack) * Bash
+🌍 Networking & Security
+  * MikroTik  * Port Forwardin  * Firewall Configuration * NAT
+📧 Mail & Collaboration
+  * Zimbra Collaboration Suite * Roundcube Webmail
+👥 Directory Services
+  * OpenLDAP Server  * Multi-OS LDAP Client Configuration
+📂 Self-Hosted Services
+  * Nextcloud  * Truenas * Samba * FTP Server
+🐳 Containers & 📊 Monitoring
+  * Docker  * Webhook Alert Monitoring * Grafana * Prometheus
+☁️ Cloud & Edge Services
+  * Cloudflare DNS Management * Cloudflare Tunnel (Web Server & Nextcloud) * Email DNS Configuration SPF,DKIM,DMARC
 
 
 ## 🏗️ What I Do Here
