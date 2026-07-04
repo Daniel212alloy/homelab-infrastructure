@@ -4,24 +4,25 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 
 ## 🔧 Tech Stack
 
-🐧 Operating Systems
-  * Debian * Ubuntu * CentOS * Rocky Linux
-💻 Virtualization 
-  * KVM (Virt-Manager) * VirtualBox
-🌐 Web Server & Development
-  * Apache HTTP Server * MariaDB * PHP (LAMP Stack) * Bash
-🌍 Networking & Security
-  * MikroTik  * Port Forwardin  * Firewall Configuration * NAT
-📧 Mail & Collaboration
-  * Zimbra Collaboration Suite * Roundcube Webmail
-👥 Directory Services
-  * OpenLDAP Server  * Multi-OS LDAP Client Configuration
-📂 Self-Hosted Services
-  * Nextcloud  * Truenas * Samba * FTP Server
-🐳 Containers & 📊 Monitoring
-  * Docker  * Webhook Alert Monitoring * Grafana * Prometheus
-☁️ Cloud & Edge Services
-  * Cloudflare DNS Management * Cloudflare Tunnel (Web Server & Nextcloud) * Email DNS Configuration SPF,DKIM,DMARC
+* 🐧 **Operating Systems**
+  * Debian • Ubuntu • CentOS • Rocky Linux
+* 💻 **Virtualization**
+  * KVM (Virt-Manager) • VirtualBox
+* 🌐 **Web Server & Development**
+  * Apache HTTP Server • MariaDB • PHP (LAMP Stack) • Bash
+* 🌍 **Networking & Security**
+  * MikroTik • Port Forwarding • Firewall Configuration • NAT
+* 📧 **Mail & Collaboration**
+  * Zimbra Collaboration Suite • Roundcube Webmail
+* 👥 **Directory Services**
+  * OpenLDAP Server • Multi-OS LDAP Client Configuration
+* 📂 **Self-Hosted Services**
+  * Nextcloud • TrueNAS • Samba • FTP Server
+* 🐳 **Containers & 📊 Monitoring**
+  * Docker • Webhook Alert Monitoring • Grafana • Prometheus
+* ☁️ **Cloud & Edge Services**
+  * Cloudflare DNS Management • Cloudflare Tunnel (Web Server & Nextcloud) • Email DNS Configuration (SPF, DKIM, DMARC)
+
 
 ## 🎯 Current Homelab
 
