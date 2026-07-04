@@ -23,17 +23,23 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 ☁️ Cloud & Edge Services
   * Cloudflare DNS Management * Cloudflare Tunnel (Web Server & Nextcloud) * Email DNS Configuration SPF,DKIM,DMARC
 
+## 🎯 Current Homelab
 
-## 🏗️ What I Do Here
-- Install and configure Linux servers from scratch
-- Deploy and manage self-hosted services (Nextcloud, Zimbra)
-- Configure networking, firewall, and port forwarding
-- Perform system troubleshooting and issue resolution
-- Install and maintain Linux on laptops and workstations
-- Document configurations and problem-solving steps for portfolio purposes
-- Setup OS with separate storage disk
+| Service                    | Status    | Platform       | Notes                           |
+| -------------------------- | --------- | -------------- | ------------------------------- |
+| Zimbra Collaboration Suite | ✅ Running | Rocky Linux VM | Mail Server                     |
+| Roundcube Webmail          | ✅ Running | Docker         | Connected to external Postfix   |
+| Postfix SMTP Relay         | ✅ Running | Centos 9 VM    | Integrated with Brevo SMTP      |
+| Brevo SMTP                 | ✅ Active  | Cloud Service  | Outbound mail relay             |
+| Nextcloud                  | ✅ Running | Debian & Centos| Published via Cloudflare Tunnel |
+| OpenLDAP                   | ✅ Running | Centos 7 VM    | Centralized Authentication      |
+| Grafana                    | ✅ Running | Docker         | Infrastructure Monitoring       |
+| Prometheus                 | ✅ Running | Docker         | Metrics Collection              |
+| WhatsApp Alert             | ✅ Running | Docker         | Webhook Monitoring              |
+| Cloudflare Tunnel          | ✅ Running | Cloudflare     | Secure public access            |
 
----
+
+📂 Featured Projects & 💼 Experience Through Projects
 
 ## 🌐 Networking Setup
 - Implemented IP segmentation using Mikrotik RouterOS
@@ -41,9 +47,7 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 - Configured NAT and port forwarding for self-hosted services
 - Applied basic firewall rules for access control
 
-
 ## 📧 Mail Server Stack (Zimbra Collaboration)
-
 Successfully deployed **Zimbra Collaboration Suite (ZCS 8.8.15)** on **Rocky Linux 8**. The primary focus of this lab was to establish a reliable email delivery system despite ISP port restrictions.
 
 ### **Technical Specifications**
@@ -65,19 +69,16 @@ Successfully deployed **Zimbra Collaboration Suite (ZCS 8.8.15)** on **Rocky Lin
 - **Port Management:** Diagnosed connection timeouts on standard ports and successfully pivoted to port **2525** for stable relaying.
 - **Deliverability:** Verified that proper DKIM TXT records are essential for passing Google's strict security filters.
 
----
-
 ## 🛠️ Other Services & Expertise
 - **Operating Systems:** Advanced administration of Ubuntu, Debian, CentOS, and Rocky Linux.
 - **Identity Management:** Centralized authentication using OpenLDAP.
 - **Cloud Storage:** Self-hosted Nextcloud instance for private data management.
 - **Secure Access:** Implementing Cloudflare Tunnels and Tailscale for encrypted remote access.
-
+- **LDAP:** Integrasi Ldap VM to Ldap Client with Other OS
+- **Cloudflare:** Setting Cloudflare and integrasi Domain and Tunnel
 ---
 *Maintained by Daniel (aloy) — Passionate about Linux Systems and Network Engineering.*
 
 
 ### Notes
 This setup is used for learning and homelab purposes only.
-
-
