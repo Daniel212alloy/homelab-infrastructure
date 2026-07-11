@@ -2,7 +2,7 @@
 
 Technical Stack
 
-    OS: Rocky Linux 8 (Virtual Machine via Virt-Manager)
+    OS: Rocky Linux 8 & Centos 9 (Virtual Machine via Virt-Manager)
 
     Mail Server: Postfix & Dovecot
 

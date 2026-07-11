@@ -26,19 +26,19 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 
 ## 🎯 Current Homelab
 
-| Service                    | Status    | Platform       | Notes                           |
-| -------------------------- | --------- | -------------- | ------------------------------- |
-| Zimbra Collaboration Suite | ✅ Running | Rocky Linux VM | Mail Server                     |
-| Roundcube Webmail          | ✅ Running | Docker         | Connected to external Postfix   |
-| Postfix SMTP Relay         | ✅ Running | Centos 9 VM    | Integrated with Brevo SMTP      |
-| Brevo SMTP                 | ✅ Active  | Cloud Service  | Outbound mail relay             |
-| Nextcloud                  | ✅ Running | Debian & Centos| Published via Cloudflare Tunnel |
-| OpenLDAP                   | ✅ Running | Centos 7 VM    | Centralized Authentication      |
-| Grafana                    | ✅ Running | Docker         | Infrastructure Monitoring       |
-| Prometheus                 | ✅ Running | Docker         | Metrics Collection              |
-| WhatsApp Alert             | ✅ Running | Docker         | Webhook Monitoring              |
-| Cloudflare Tunnel          | ✅ Running | Cloudflare     | Secure public access            |
-
+| Service                    | Status     | Platform           | Notes                           |
+| -------------------------- | ---------- | -------------------| ------------------------------- |
+| Zimbra Collaboration Suite | ✅ Running | Rocky Linux VM     | Mail Server                     |
+| Roundcube Webmail          | ✅ Running | Docker             | Connected to external Postfix   |
+| Postfix SMTP Relay         | ✅ Running | Centos 9 VM        | Integrated with Brevo SMTP      |
+| Brevo SMTP                 | ✅ Active  | Cloud Service      | Outbound mail relay             |
+| Nextcloud                  | ✅ Running | Debian & Centos    | Published via Cloudflare Tunnel |
+| OpenLDAP                   | ✅ Running | Centos 7 VM        | Centralized Authentication      |
+| Grafana                    | ✅ Running | Docker Rocky       | Infrastructure Monitoring       |
+| Prometheus                 | ✅ Running | Docker Rocky       | Metrics Collection              |
+| WhatsApp Alert             | ✅ Running | Docker Rocky       | Webhook Monitoring              |
+| Cloudflare Tunnel          | ✅ Running | Cloudflare Debian  | Secure public access            |
+| Database                   | ✅ Running | Centos 7           | Central DB                      |
 
 📂 Featured Projects & 💼 Experience Through Projects
 
@@ -69,6 +69,7 @@ Successfully deployed **Zimbra Collaboration Suite (ZCS 8.8.15)** on **Rocky Lin
 - **Authentication:** Resolved `535 5.7.8 Authentication failed` errors by validating SMTP API keys and mapping credentials correctly in Postfix.
 - **Port Management:** Diagnosed connection timeouts on standard ports and successfully pivoted to port **2525** for stable relaying.
 - **Deliverability:** Verified that proper DKIM TXT records are essential for passing Google's strict security filters.
+- **Others
 
 ## 🛠️ Other Services & Expertise
 - **Operating Systems:** Advanced administration of Ubuntu, Debian, CentOS, and Rocky Linux.

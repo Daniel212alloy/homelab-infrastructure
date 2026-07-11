@@ -79,8 +79,8 @@ This project is part of my homelab infrastructure for learning Linux system admi
 * Server Online
 * Server Offline
 * Recovery Detection  (on pogres)
-* Periodic Availability Check (on pogres)
-
+* Periodic Availability 
+* Chatboot 
 ## ⚙️ Service Monitoring
 
 Monitor services such as:

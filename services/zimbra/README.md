@@ -1,24 +1,84 @@
-Technical Stack
+# 📧 Self-Hosted Mail Server with Zimbra & Cloudflare Infrastructure
 
-    OS: Rocky Linux 8 (Virtual Machine via Virt-Manager)
+A self-hosted email infrastructure project built using **Zimbra Collaboration Suite** running on a virtual machine environment.
 
-    Mail Server: Zimbra ZCS 8.8.15 GA
+This project demonstrates the implementation of a private mail server, SMTP relay integration, DNS email security standards, and secure webmail access using Cloudflare infrastructure.
 
-    SMTP Relay: Brevo (Sendinblue)
+The main goal of this project is to build a reliable email system while overcoming ISP limitations and applying modern email security practices.
 
-    DNS Management: Cloudflare
+---
 
-    Networking: Cloudflare Tunnels (for webmail access)
+# 🏗️ Infrastructure Architecture
 
-Key Implementation
+```
+                 Internet
+                    |
+                    |
+              Cloudflare DNS
+                    |
+        +-----------+-----------+
+        |                       |
+  Webmail Access          Email Security
+ Cloudflare Tunnel      SPF / DKIM / DMARC
+        |
+        |
+ Rocky Linux VM
+        |
+        |
+ Zimbra Collaboration Suite
+        |
+        |
+ Postfix SMTP Server
+        |
+        |
+ Brevo SMTP Relay
+```
 
-    Bypassing ISP Restrictions: Mengatasi pemblokiran port 25 & 587 oleh ISP dengan mengalihkan traffic ke port 2525.
+---
 
-    SMTP Authentication: Konfigurasi SASL authentication pada Postfix Zimbra menggunakan kredensial Brevo.
+# 🛠️ Technical Stack
 
-    DNS Security (SPF, DKIM, DMARC): Implementasi standar keamanan email via Cloudflare untuk memastikan email tidak masuk folder Spam.
+| Component            | Technology                           |
+| -------------------- | ------------------------------------ |
+| Virtualization       | Virt-Manager (KVM/QEMU)              |
+| Operating System     | Rocky Linux 8                        |
+| Mail Platform        | Zimbra Collaboration Suite 8.8.15 GA |
+| SMTP Server          | Postfix (Zimbra MTA)                 |
+| SMTP Relay Provider  | Brevo (Sendinblue)                   |
+| DNS Management       | Cloudflare DNS                       |
+| Secure Remote Access | Cloudflare Tunnel                    |
+| Authentication       | SASL SMTP Authentication             |
 
-    Relay Configuration:
+---
+
+# 🚀 Key Implementation
+
+## 1. Overcoming ISP SMTP Port Restrictions
+
+Many ISPs block traditional mail ports such as:
+
+* Port 25
+* Port 587
+
+To bypass these restrictions, outbound SMTP traffic was redirected through Brevo SMTP Relay using an alternative SMTP submission port:
+
+```
+Zimbra Postfix
+        |
+        |
+SMTP Relay Authentication
+        |
+        |
+Brevo SMTP Server (Port 2525)
+```
+
+This allows the mail server to send emails reliably without requiring direct SMTP connectivity from the ISP network.
+
+---
+
+
+
+
 
 
 [root@mail ~]# tail -f /var/log/zimbra.log | grep "smtp-relay.brevo.com"
