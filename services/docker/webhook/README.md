@@ -197,8 +197,6 @@ This project is licensed under the MIT License.
 
 **Daniel Saragih**
 
-GitHub:
-https://github.com/Daniel212alloy
 
 ---
 

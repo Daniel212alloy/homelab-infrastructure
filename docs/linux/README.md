@@ -1,57 +1,171 @@
-# Linux Administration Notes
+# Linux Administration Guide
 
-This document summarizes Linux administration principles
-applied in this homelab infrastructure project.
-
----
-
-## Linux Basics
-
-- `/var/www` is used for web applications
-- Application and data directories should be separated
-- Services should run as non-root users for security
+This document summarizes the Linux administration practices used throughout this homelab infrastructure. The environment includes Debian, Ubuntu, Rocky Linux, CentOS, Docker containers, virtualization, and self-hosted services.
 
 ---
 
-## Linux Permissions
+# Directory Structure
 
-- File permissions should not be modified directly inside application data directories
-- Access control should be managed at application level when available
-- Linux permissions act as a base security layer
+The following directory layout is used to keep the system organized.
 
----
-
-## Storage Management
-
-- Application data is stored under `/data`
-- Data directory is mounted from a separate disk
-- This approach simplifies backup and restore operations
-
----
-
-## Networking Basics
-
-- Services expose only required ports
-- Internal services are not publicly accessible
-- Network access is restricted by firewall rules
+```text
+/
+├── /etc                 System configuration
+├── /var/log             System and application logs
+├── /var/www             Web applications
+├── /usr/local           Custom applications
+├── /data                Persistent storage
+├── /home                User home directories
+└── /tmp                 Temporary files
+```
 
 ---
 
-## Troubleshooting Approach
+# User Management
 
-1. Check service status
-2. Review application logs
-3. Verify permissions
-4. Validate configuration files
-5. Restart service only after root cause analysis
-
----
-
-## Security Principles
-
-- Least privilege principle
-- Services run with minimum required permissions
-- Regular updates and patching are applied
+- Avoid using the root account for daily administration.
+- Create dedicated users for services whenever possible.
+- Use `sudo` for privileged operations.
+- Apply the Principle of Least Privilege.
 
 ---
 
+# File Permissions
+
+Typical permissions used throughout the environment.
+
+| Permission | Description |
+|------------|-------------|
+| 644 | Regular files |
+| 755 | Directories and executable files |
+| 600 | Sensitive configuration files |
+| 700 | Private directories |
+
+Ownership should always match the service that manages the files.
+
+Example:
+
+```bash
+chown -R www-data:www-data /var/www/html
+chmod -R 755 /var/www/html
+```
+
+---
+
+# Storage Management
+
+Persistent application data is stored on a dedicated data partition.
+
+Example:
+
+```text
+/data
+├── docker
+├── nginx
+├── backups
+├── monitoring
+└── projects
+```
+
+Benefits:
+
+- Easier backups
+- Cleaner system upgrades
+- Simplified disaster recovery
+
+---
+
+# Service Management
+
+Common systemd commands.
+
+```bash
+systemctl status nginx
+systemctl restart nginx
+systemctl enable nginx
+systemctl disable nginx
+journalctl -u nginx -f
+```
+
+---
+
+# Log Management
+
+Useful log locations.
+
+| Service | Log Location |
+|----------|--------------|
+| System | /var/log/messages |
+| Nginx | /var/log/nginx/ |
+| Apache | /var/log/httpd/ |
+| Docker | docker logs |
+| SSH | journalctl -u sshd |
+
+---
+
+# Networking
+
+Basic verification commands.
+
+```bash
+ip addr
+ip route
+ss -tulpn
+ping
+curl
+```
+
+Firewall example:
+
+```bash
+firewall-cmd --list-all
+firewall-cmd --reload
+```
+
+---
+
+# Security Practices
+
+- Keep packages updated.
+- Disable unused services.
+- Use SSH key authentication when possible.
+- Restrict firewall rules.
+- Limit exposed ports.
+- Regularly review system logs.
+- Backup important data.
+
+---
+
+# Troubleshooting Workflow
+
+1. Verify the service status.
+2. Review logs.
+3. Check configuration syntax.
+4. Validate permissions.
+5. Test network connectivity.
+6. Restart the service only after identifying the issue.
+
+---
+
+# Backup Strategy
+
+Critical data includes:
+
+- Docker volumes
+- Configuration files
+- Databases
+- SSL certificates
+- Project files
+
+Backups should be stored separately from the production environment.
+
+---
+
+# References
+
+- Linux Documentation Project
+- systemd Documentation
+- Docker Documentation
+- Rocky Linux Documentation
+- Debian Documentation
+- Ubuntu Documentation

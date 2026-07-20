@@ -18,11 +18,18 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
   * OpenLDAP Server • Multi-OS LDAP Client Configuration
 * 📂 **Self-Hosted Services**
   * Nextcloud • TrueNAS • Samba • FTP Server
-* 🐳 **Containers & 📊 Monitoring**
-  * Docker • Webhook Alert Monitoring • Grafana • Prometheus
+* 📊 **Monitoring & Observability**
+  * Grafana • Prometheus • Node Exporter
+* 🤖 **Automation**
+  * Node.js • Express • Webhook API • WhatsApp Alert Bot • WhatsApp Chatbot
 * ☁️ **Cloud & Edge Services**
   * Cloudflare DNS Management • Cloudflare Tunnel (Web Server & Nextcloud) • Email DNS Configuration (SPF, DKIM, DMARC)
-
+* 🐳 **Containerization**
+  * Docker • Docker Compose
+* 🗄️ **Databases**
+  * MariaDB
+* 📦 **Version Control**
+  * Git • GitHub
 
 ## 🎯 Current Homelab Status
 
@@ -41,6 +48,7 @@ Berikut adalah status *services* dan infrastruktur yang berjalan aktif di labora
 | **WhatsApp Alert Bot** | ✅ Running | Docker (Rocky) | Real-time Webhook Monitoring & VM Alerts |
 | **Cloudflare Tunnel** | ✅ Running | Debian VM | Secure public access without open inbound ports |
 | **Database Server** | ✅ Running | CentOS 7 VM | Centralized DB for homelab services |
+| **Docker Engine** | ✅ Running | Rocky Linux 10 VM | Container runtime hosting infrastructure services |
 
 ---
 
@@ -86,6 +94,7 @@ Successfully deployed **Zimbra Collaboration Suite (ZCS 8.8.15)** on **Rocky Lin
 - **Cloud Storage:** Deployed and maintained self-hosted Nextcloud instances for secure, private data management.
 - **Secure Remote Access:** Implemented modern zero-trust networking using **Cloudflare Tunnels** and **Tailscale** for encrypted remote access without exposing public ports.
 - **Cloudflare Integration:** Full domain management, custom DNS records tuning, and proxy optimization for web applications.
+- **Docker & Containerized Applications:** Designed and maintained containerized infrastructure using Docker and Docker Compose, with Nginx Reverse Proxy for secure routing, load distribution, and service exposure.
 
 ---
 *Maintained by Daniel (aloy) — Passionate about Linux Systems and Network Engineering.*
