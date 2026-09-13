@@ -7,7 +7,7 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 * 🐧 **Operating Systems**
   * Debian • Ubuntu • CentOS • Rocky Linux
 * 💻 **Virtualization**
-  * Proxmox VE (KVM) • Virt-Manager • VirtualBox
+  * Proxmox VE • Virt-Manager (KVM) • VirtualBox
 * 🌐 **Web Server & Development**
   * Apache HTTP Server • MariaDB • PHP (LAMP Stack) • Bash
 * 🌍 **Networking & Security**
