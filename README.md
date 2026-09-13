@@ -7,7 +7,7 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 * 🐧 **Operating Systems**
   * Debian • Ubuntu • CentOS • Rocky Linux
 * 💻 **Virtualization**
-  * KVM (Virt-Manager) • VirtualBox
+  * Proxmox VE (KVM) • Virt-Manager • VirtualBox
 * 🌐 **Web Server & Development**
   * Apache HTTP Server • MariaDB • PHP (LAMP Stack) • Bash
 * 🌍 **Networking & Security**
@@ -31,6 +31,7 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 * 📦 **Version Control**
   * Git • GitHub
 
+---
 ## 🎯 Current Homelab Status
 
 Berikut adalah status *services* dan infrastruktur yang berjalan aktif di laboratorium mandiri (*homelab*) saat ini:
@@ -95,6 +96,7 @@ Successfully deployed **Zimbra Collaboration Suite (ZCS 8.8.15)** on **Rocky Lin
 - **Secure Remote Access:** Implemented modern zero-trust networking using **Cloudflare Tunnels** and **Tailscale** for encrypted remote access without exposing public ports.
 - **Cloudflare Integration:** Full domain management, custom DNS records tuning, and proxy optimization for web applications.
 - **Docker & Containerized Applications:** Designed and maintained containerized infrastructure using Docker and Docker Compose, with Nginx Reverse Proxy for secure routing, load distribution, and service exposure.
+
 
 ---
 *Maintained by Daniel (aloy) — Passionate about Linux Systems and Network Engineering.*
