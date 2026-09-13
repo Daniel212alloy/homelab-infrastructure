@@ -19,7 +19,7 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 * 📂 **Self-Hosted Services**
   * Nextcloud • TrueNAS • Samba • FTP Server
 * 📊 **Monitoring & Observability**
-  * Grafana • Prometheus • Node Exporter
+  * Grafana • Prometheus • Node Exporter • Uptime Kuma
 * 🤖 **Automation**
   * Node.js • Express • Webhook API • WhatsApp Alert Bot • WhatsApp Chatbot
 * ☁️ **Cloud & Edge Services**
