@@ -9,9 +9,9 @@ A comprehensive documentation of my personal IT infrastructure, focusing on serv
 * 💻 **Virtualization**
   * Proxmox VE • Virt-Manager (KVM) • VirtualBox
 * 🌐 **Web Server & Development**
-  * Apache HTTP Server • MariaDB • PHP (LAMP Stack) • Bash
+  * Apache HTTP Server • Nginx • MariaDB • PHP (LAMP Stack) • Bash
 * 🌍 **Networking & Security**
-  * MikroTik • Port Forwarding • Firewall Configuration • NAT
+  * MikroTik • Bridge Networking • Port Forwarding • Firewall Configuration • NAT
 * 📧 **Mail & Collaboration**
   * Zimbra Collaboration Suite • Roundcube Webmail
 * 👥 **Directory Services**
